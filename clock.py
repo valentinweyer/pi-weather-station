@@ -1,16 +1,16 @@
 import datetime
-from tkinter import *
+import tkinter as tk
 
 
-class ClockComponent:
-    def __init__(self, root):
+class ClockWidget(tk.Frame):
+    def __init__(self, root, *args, **kwargs):
+        tk.Frame.__init__(self, root, *args, **kwargs)
+        
         self.root = root
         self.now = datetime.datetime.now()
         self.time_now = self.now.strftime("%X")
         
-        self.timeFrame = Frame(self.root, width=200, height = 400) # Frame initialisieren
-        self.timeFrame.grid(row=0, column=0, padx=10, pady=3)
-        self.timeLabel = Label(self.timeFrame, text=self.time_now)
+        self.timeLabel = tk.Label(self, text=self.time_now)
         self.timeLabel.grid()
         
         self.updateClock()
@@ -21,9 +21,5 @@ class ClockComponent:
         self.time_now = self.now.strftime("%X")
     
         self.timeLabel.configure(text = self.time_now)
-        self.timeFrame.after(200, self.updateClock)
-
-
-
-    def Date():
-       print(now.strftime("%d ""%B ""%Y"))
+        
+        self.after(200, self.updateClock)
