@@ -10,7 +10,7 @@ class ClockWidget(tk.Frame):
         self.now = datetime.datetime.now()
         self.time_now = self.now.strftime("%X")
         
-        self.timeLabel = tk.Label(self, text=self.time_now)
+        self.timeLabel = tk.Label(self, text=self.time_now, font = ('arial', 48, 'bold'))
         self.timeLabel.grid()
         
         self.updateClock()
@@ -20,6 +20,6 @@ class ClockWidget(tk.Frame):
         self.now = datetime.datetime.now()
         self.time_now = self.now.strftime("%X")
     
-        self.timeLabel.configure(text = self.time_now)
+        self.timeLabel.configure(text = self.time_now, font = ('arial', 48, 'bold'))
         
         self.after(200, self.updateClock)

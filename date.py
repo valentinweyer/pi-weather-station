@@ -10,7 +10,7 @@ class DateWidget(tk.Frame):
         self.now = datetime.datetime.now()
         self.date_now = self.now.strftime("%d.%m.%y")
         
-        self.dateLabel = tk.Label(self, text=self.date_now)
+        self.dateLabel = tk.Label(self, text=self.date_now, font = ('arial', 48, 'bold'))
         self.dateLabel.grid()
         
         self.updateDate()
@@ -20,6 +20,6 @@ class DateWidget(tk.Frame):
         self.now = datetime.datetime.now()
         self.date_now = self.now.strftime("%d.%m.%y")
     
-        self.dateLabel.configure(text = self.date_now)
+        self.dateLabel.configure(text = self.date_now, font = ('arial', 48, 'bold'))
         
         self.after(200, self.updateDate)

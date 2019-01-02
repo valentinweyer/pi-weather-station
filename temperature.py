@@ -12,7 +12,7 @@ class TemperatureWidget(tk.Frame):
         tk.Frame.__init__(self, root, *args, **kwargs)
         
         self.root = root
-        self.temperatureLabel = tk.Label(self, text="Innen: " + str(self.getCurrent()) + "°")
+        self.temperatureLabel = tk.Label(self, text="Innen: " + str(self.getCurrent()) + "°", font = ('arial', 48, 'bold'))
         self.temperatureLabel.grid()
         
         self.updateTemperature()
