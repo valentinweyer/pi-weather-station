@@ -1,5 +1,6 @@
 import datetime
 import tkinter as tk
+from guisettings import *
 
 
 class DateWidget(tk.Frame):
@@ -10,7 +11,7 @@ class DateWidget(tk.Frame):
         self.now = datetime.datetime.now()
         self.date_now = self.now.strftime("%d.%m.%y")
         
-        self.dateLabel = tk.Label(self, text=self.date_now, font = ('arial', 48, 'bold'))
+        self.dateLabel = tk.Label(self, text=self.date_now, font = ('arial', LABEL_FONT_SIZE, 'bold'))
         self.dateLabel.grid()
         
         self.updateDate()
@@ -20,6 +21,6 @@ class DateWidget(tk.Frame):
         self.now = datetime.datetime.now()
         self.date_now = self.now.strftime("%d.%m.%y")
     
-        self.dateLabel.configure(text = self.date_now, font = ('arial', 48, 'bold'))
+        self.dateLabel.configure(text = self.date_now, font = ('arial', LABEL_FONT_SIZE, 'bold'))
         
         self.after(200, self.updateDate)

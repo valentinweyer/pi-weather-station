@@ -1,6 +1,7 @@
 import Adafruit_DHT
 import time
 import tkinter as tk
+from guisettings import *
 
 
 sensor=Adafruit_DHT.DHT11
@@ -12,14 +13,14 @@ class TemperatureWidget(tk.Frame):
         tk.Frame.__init__(self, root, *args, **kwargs)
         
         self.root = root
-        self.temperatureLabel = tk.Label(self, text="Innen: " + str(self.getCurrent()) + "°", font = ('arial', 48, 'bold'))
+        self.temperatureLabel = tk.Label(self, text="Innen: " + str(self.getCurrent()) + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'))
         self.temperatureLabel.grid()
         
         self.updateTemperature()
     
     
     def updateTemperature(self):    
-        self.temperatureLabel.configure(text = "Innen: " + str(self.getCurrent()) + "°")
+        self.temperatureLabel.configure(text = "Innen: " + str(self.getCurrent()) + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'))
 
         self.after(30000, self.updateTemperature)
  

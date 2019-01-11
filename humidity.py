@@ -1,6 +1,7 @@
 import Adafruit_DHT
 import time
 import tkinter as tk
+from guisettings import *
 
 
 sensor=Adafruit_DHT.DHT11
@@ -12,14 +13,14 @@ class HumidityWidget(tk.Frame):
         tk.Frame.__init__(self, root, *args, **kwargs)
         
         self.root = root
-        self.humidityLabel = tk.Label(self, text=str(self.getCurrent()) + "%", font = ('arial', 48, 'bold'))
+        self.humidityLabel = tk.Label(self, text=str(self.getCurrent()) + "%", font = ('arial', LABEL_FONT_SIZE, 'bold'))
         self.humidityLabel.grid()
         
         self.updateHumidity()
     
     
     def updateHumidity(self):    
-        self.humidityLabel.configure(text =str(self.getCurrent()) + "%", font = ('arial', 48, 'bold'))
+        self.humidityLabel.configure(text =str(self.getCurrent()) + "%", font = ('arial', LABEL_FONT_SIZE, 'bold'))
 
         self.after(30000, self.updateHumidity)
  
