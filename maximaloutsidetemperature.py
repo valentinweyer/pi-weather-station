@@ -10,5 +10,5 @@ class MaximalOutsideTemperatureWidget(tk.Frame):
         self.Max = str(6)
 
         
-        self.maximalOutsideTemperature = tk.Label(self, text="Max: " + self.Max + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'))
+        self.maximalOutsideTemperature = tk.Label(self, text="Max: " + self.Max + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'), background = "#" + BACKGROUND)
         self.maximalOutsideTemperature.grid()    

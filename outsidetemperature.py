@@ -9,5 +9,5 @@ class OutsideTemperatureWidget(tk.Frame):
         self.root = root
         self.Außen = str(4)
         
-        self.OutsideTemperatureLabel = tk.Label(self, text="Außen: " + self.Außen + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'))
+        self.OutsideTemperatureLabel = tk.Label(self, text="Außen: " + self.Außen + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'), background = "#" + BACKGROUND)
         self.OutsideTemperatureLabel.grid()
