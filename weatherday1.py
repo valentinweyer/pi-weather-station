@@ -11,6 +11,10 @@ class WeatherTowmorrowWidget(tk.Frame):
         self.Min = str(2)
         self.Max = str(4)
           
+        self.imageEx = tk.PhotoImage(file = '200x200')
+        self.image = tk.Label(image = self.imageEx)
+        self.image.grid(row=4, column=1)
+          
         self.mintemptomorrow = tk.Label(self, text = "Min: " + self.Min + "°", font = ('arial', LABEL_FONT_SIZE, 'bold'), background = "#" + BACKGROUND) 
         self.mintemptomorrow.grid()
         
